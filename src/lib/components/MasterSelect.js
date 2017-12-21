@@ -9,6 +9,7 @@ class MasterSelect extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     selects: PropTypes.object,
+    options: PropTypes.arrayOf(PropTypes.object),
     slaves: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -17,6 +18,11 @@ class MasterSelect extends Component {
       })
     )
   };
+
+  static defaultProps = {
+    options: [],
+    selects: {},
+  }
 
   constructor(props) {
     super(props);
