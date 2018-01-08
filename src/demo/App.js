@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MasterSelect from '../lib';
 
+import 'react-select/scss/default.scss';
+
 const options_ms1 = [
   {
     value: 'm1',
@@ -77,6 +79,7 @@ class App extends Component {
     super(props);
     this.msFields = {};
     this.state = {
+      foo: null,
       master1: null,
       slave1: null
     };
@@ -85,6 +88,26 @@ class App extends Component {
   render() {
     return (
       <article>
+        <div className="grid-x grid-margin-x">
+          <div className="small-12 cell">
+            <h2 className="subheader">Useless usage</h2>
+            <p>
+              It can work as a normal react-select <code>Select</code> instance
+              if you don't provide any special props.
+            </p>
+          </div>
+          <div className="small-12 cell">
+            <MasterSelect
+              id="foo"
+              options={options_ms1}
+              value={this.state.foo}
+              onChange={selected => {
+                this.setState({ foo: selected ? selected.value : null });
+              }}
+            />
+          </div>
+        </div>
+        <hr />
         <div className="grid-x grid-margin-x">
           <div className="small-12 cell">
             <h2 className="subheader">Simple usage</h2>
@@ -195,7 +218,7 @@ class App extends Component {
         <hr />
         <div className="grid-x grid-margin-x">
           <div className="small-12 cell">
-            <h2 className="subheader">Controls two select</h2>
+            <h2 className="subheader">One master, two slaves</h2>
             <p>
               When selecting the <em>blue</em> value on the left we are changing
               options on both selects on the right.
@@ -261,7 +284,7 @@ class App extends Component {
         <hr />
         <div className="grid-x grid-margin-x">
           <div className="small-12 cell">
-            <h2 className="subheader">Cascading master slaves</h2>
+            <h2 className="subheader">Both master and slave</h2>
             <p>
               When selecting the <em>blue</em> value on the left we are limiting
               options on the middle select to only blue-like values, but the

@@ -26,7 +26,7 @@ module.exports = {
   },
   module: {
     strictExportPresence: true,
-    rules: [ 
+    rules: [
       {
         test: /\.(js|jsx)$/,
         enforce: 'pre',
@@ -127,7 +127,7 @@ module.exports = {
           // Make sure to add the new loader(s) before the "file" loader.
         ]
       }
-    ]    
+    ]
   },
   plugins: [
     // Minify the code.

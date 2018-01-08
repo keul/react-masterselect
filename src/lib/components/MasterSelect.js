@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 import isEqual from 'lodash/isEqual';
 
-import 'react-select/scss/default.scss';
-
 class MasterSelect extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
@@ -48,13 +46,13 @@ class MasterSelect extends Component {
         const slavesConf = masterSelect.props.slaves;
         // find a master config that refers this component
         slavesConf.filter(conf => conf.id === id).map(conf => {
-          let newOptions = null;
+          let newOptions = [];
           Object.keys(conf.rules)
             .filter(key => key === masterSelect.value)
             .map(key => {
               newOptions = conf.rules[key];
             });
-          if (newOptions) {
+          if (newOptions.length > 0) {
             let nextOptions = [];
             // 1. find options already in the original options set
             options.map(option => {
