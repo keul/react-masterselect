@@ -6,6 +6,10 @@ A wrapper around [react-select](https://www.npmjs.com/package/react-select) that
 [![Dependencies](https://img.shields.io/david/keul/react-masterselect.svg)]()
 [![Dev Dependencies](https://img.shields.io/david/dev/keul/react-masterselect.svg)]()
 
+## Live demo
+
+https://keul.github.io/react-masterselect/
+
 ## How to use
 
 ### Installation
