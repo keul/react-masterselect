@@ -111,7 +111,7 @@
     }
   },
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "prop-types": "^15.6.2",
     "react-select": "^1.1.0"
   }
